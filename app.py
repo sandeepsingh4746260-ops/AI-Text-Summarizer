@@ -42,7 +42,8 @@ uploaded_file = st.file_uploader(
     type=["pdf"]
 )
 
-st.markdown("### OR")
+
+
 
 
 # If user uploads a PDF,
@@ -57,14 +58,14 @@ if uploaded_file is not None:
 
     st.write(f"Characters in PDF : {len(pdf_text)}")
 
-
+st.markdown("### OR")
 
 # Text Input Section
 
 user_input = st.text_area(
     label="Enter your text",
     placeholder="Paste your text here...",
-    height=250
+    height=200
 )
 
 

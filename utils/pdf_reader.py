@@ -2,9 +2,9 @@ from PyPDF2 import PdfReader
 
 
 def extract_text_from_pdf(uploaded_file):
-    """
-    Extract text from uploaded PDF file.
-    """
+    
+    #Extract text from uploaded PDF file.
+    
 
     reader = PdfReader(uploaded_file)
 
