@@ -22,17 +22,19 @@ The application allows users to either paste text or upload a PDF file. It then 
 
 ## Project Structure
 
-AI_Text_Summarizer/
-│
-├── utils/
-│   ├── gemini.py
-│   └── pdf_reader.py
-│
-├── app.py
-├── requirements.txt
-├── .env
-├── .gitignore
-└── README.md
+- app.py = Main file jisme Streamlit UI aur application ka logic hai.
+
+- utils/gemini.py = Gemini AI API ko handle karta hai aur summary generate karta hai.
+
+- utils/pdf_reader.py = Uploaded PDF se text extract karta hai.
+
+- requirements.txt = Project me use hone wali libraries ki list.
+
+- .env = Gemini API Key store karne ke liye.
+
+- .gitignore = Unnecessary files ko GitHub par upload hone se rokta hai.
+
+- README.md = Project ki basic information aur instructions.
 
 ## How to Run
 
