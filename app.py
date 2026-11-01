@@ -2,8 +2,9 @@
 # Import Required Libraries
 
 import streamlit as st
+from openai import OpenAIError
 
-from utils.gemini import generate_summary
+from utils.groq import GroqSummaryError, generate_summary, get_api_error_message
 from utils.pdf_reader import extract_text_from_pdf
 
 
@@ -123,11 +124,16 @@ if summarize_btn:
 
             # Generate AI summary
 
-            summary = generate_summary(input_text)
-
-        # Display generated summary
-
-        summary_box.markdown(summary)
+            try:
+                summary = generate_summary(input_text)
+            except OpenAIError as error:
+                st.error(
+                    f"Could not generate summary: {get_api_error_message(error)}"
+                )
+            except (ValueError, GroqSummaryError) as error:
+                st.error(f"Could not generate summary: {error}")
+            else:
+                summary_box.markdown(summary)
 
 
 
